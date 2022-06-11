@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import "antd/dist/antd.css";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { Button, Form, Input, message, Modal, Spin } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
@@ -7,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useInjectReducer, useInjectSaga } from "redux-injectors";
 import globalReducer from "../store/reducer";
 import homeSaga from "../store/saga";
+import "antd/dist/antd.css";
 
 function Home() {
   const [spinn, setspin] = useState(false);
@@ -22,7 +22,7 @@ function Home() {
   function onFinish(values) {
     const formValues = { ...values };
     dispatch({ type: "LOGIN_FORM", payload: formValues });
-    // dispatch({ type: "DATA_BY_ID", payload: formValues });
+
     if (login.length != 0) {
       setTimeout(() => {
         message.success("Login");

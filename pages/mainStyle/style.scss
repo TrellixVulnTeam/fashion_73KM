@@ -114,12 +114,12 @@
 }
 .image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
-    url("../../public/main4.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
-  min-height: 580px;
+    url("../../public/main4.jpg") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  background-position: center !important;
+  min-height: 580px !important;
 }
 ::-webkit-scrollbar {
   width: 5px;
