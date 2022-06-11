@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { Button, Form, Input, message, Modal, Spin } from "antd";
+import { Button, Form, Input, message, Modal, Spin, Image } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useInjectReducer, useInjectSaga } from "redux-injectors";
@@ -35,7 +35,15 @@ function Home() {
 
   return (
     <div>
-      <div className="pictures_div" />
+      <div style={{ height: "300px", width: "100%" }}>
+        <Image
+          src="/mainpic.jpg"
+          height="139%"
+          width="100%"
+          alt="soory"
+          preview={false}
+        />
+      </div>
       <div className="Sign_in">
         <div className="Signin_div">
           <div className="heading_div">ShoppingMart</div>
