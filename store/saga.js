@@ -130,7 +130,6 @@ function* logout() {
 function* homeSaga() {
   yield takeLatest("VISIBLE", drawerVisible);
   yield takeLatest("CREATE_ACCOUNT", createAccount);
-  yield takeLatest("ADD_PRODUCT", AddProduct);
   yield takeLatest("LOGIN_FORM", loginForm);
   yield takeLatest("DATA_BY_ID", DataWhenLogin);
   yield takeLatest("FETCH_PRODUCT_BY_ID", fetchProductId);

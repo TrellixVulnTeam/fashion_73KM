@@ -26,7 +26,7 @@ function CreateProduct() {
       >
         <div style={{ width: "100%" }}>
           <Image
-            src={`https://agile-earth-45664.herokuapp.com/images/${data.picture}`}
+            src={`https://agile-earth-45664.herokuapp.com/images/${data?.picture}`}
             width={150}
             height={150}
           />
