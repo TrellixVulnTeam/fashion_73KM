@@ -2,32 +2,9 @@ import axios from "axios";
 import { message } from "antd";
 import * as actions from "./reducer";
 import { call, put, takeLatest } from "redux-saga/effects";
-// import { useHistory } from "next/router";
 
 function* drawerVisible({ payload: modalVisible }) {
   yield put(actions.drawer(modalVisible));
-}
-
-function* AddProduct({ payload }) {
-  const { productname, price, quantity } = payload;
-  const main = { productname, price, quantity };
-  const filee = payload.photo.file.originFileObj;
-  const form = new FormData();
-  form.append("image", filee);
-  form.append("formValues", JSON.stringify(main));
-  const head = {
-    "Content-Type": "multipart/form-data",
-  };
-  try {
-    const res = yield call(axios.post, "/addproduct", form, {
-      Headers: head,
-    });
-    if (res.status === 200) {
-      message.success("Create Successfully");
-    }
-  } catch (e) {
-    console.log(e, "Error create Account");
-  }
 }
 
 function* createAccount({ payload }) {
