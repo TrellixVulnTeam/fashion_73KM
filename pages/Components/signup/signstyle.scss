@@ -1,0 +1,39 @@
+.maindiv {
+  position: relative;
+  left: 25%;
+  top: 50%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 20px rgb(184, 181, 181);
+  width: 50%;
+  min-height: 580px;
+  border-radius: 20px;
+}
+.heading {
+  font-size: 39px;
+  text-align: center;
+  padding-top: 20px;
+  font-family: "Libre Bodoni", serif;
+  background-color: lightgray;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: blue;
+}
+.form {
+  min-height: 100%;
+  padding-right: 20% !important;
+  padding-top: 30px !important;
+}
+
+.submit {
+  position: relative;
+  left: 55% !important;
+}
+
+@media screen and (max-width: 570px) {
+  .form {
+    padding-left: 5% !important;
+  }
+  .submit {
+    left: 40% !important;
+  }
+}

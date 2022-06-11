@@ -1,0 +1,35 @@
+{
+  "name": "pureweb",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@redux-devtools/extension": "^3.2.2",
+    "@reduxjs/toolkit": "^1.8.1",
+    "antd": "^4.19.5",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.0.1",
+    "next": "12.1.5",
+    "rc-scroll-anim": "^2.7.6",
+    "react": "18.0.0",
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "18.0.0",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0",
+    "redux-injectors": "^1.3.0",
+    "redux-saga": "^1.1.3",
+    "redux-saga-effects": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5",
+    "node-sass": "^7.0.1"
+  }
+}

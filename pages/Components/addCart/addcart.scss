@@ -1,0 +1,13 @@
+.qty {
+  flex: 20%;
+  background-color: lightgray;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 5px;
+}
+@media screen and (max-width: 400px) {
+  .qty {
+    margin-left: 10px;
+    background-color: white;
+  }
+}

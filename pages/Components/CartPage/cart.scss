@@ -1,0 +1,17 @@
+.mainflex {
+  display: flex;
+  flex-direction: row;
+}
+.flexone {
+  flex: 50%;
+  padding: 40px;
+}
+.flextwo {
+  flex: 50%;
+  z-index: -1;
+}
+@media screen and (max-width: 500px) {
+  .mainflex {
+    flex-direction: column-reverse;
+  }
+}

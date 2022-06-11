@@ -1,0 +1,153 @@
+@import "../Components/signup/signstyle.scss";
+@import "../Components/loginPage/home.scss";
+@import "../Components/CartPage/cart.scss";
+@import "../Components/addCart/addcart.scss";
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.Sign_in {
+  min-width: 35%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: white;
+  // height: 100%;
+}
+
+.Signin_div {
+  display: flex;
+  flex-direction: column;
+}
+.heading_div {
+  min-height: 150px;
+  color: black;
+  text-align: center;
+  font-weight: bolder;
+  padding-top: 60px;
+  font: 33px solid;
+  font-style: italic;
+}
+.title_div {
+  min-height: 70px;
+  font: 20px solid;
+  color: gray;
+  text-align: center;
+  font-weight: bolder;
+}
+.name_div {
+  padding-top: 5px;
+  min-height: 55px;
+  text-align: center;
+}
+.name_input_div {
+  width: 300px !important;
+  border: 2px solid transparent !important;
+  border-bottom-color: lightgray !important;
+}
+.name_input_div:hover {
+  border-bottom-color: gray !important;
+}
+.name_input_div:focus-within {
+  box-shadow: 0px 0px 1px transparent !important;
+  border-bottom-color: gray !important;
+}
+.password_div {
+  min-height: 35px;
+  text-align: center;
+}
+.password_input_div {
+  padding-top: 9px;
+  color: black;
+  width: 300px !important;
+  border: 2px solid transparent !important;
+  border-bottom-color: lightgray !important;
+}
+.password_input_div:hover {
+  border-bottom-color: gray !important;
+}
+.password_input_div:focus-within {
+  box-shadow: 0px 0px 1px transparent !important;
+  border-bottom-color: gray !important;
+}
+.forget_div {
+  text-align: end;
+  font-size: 12px;
+  padding-right: 83px !important;
+  cursor: pointer;
+}
+.forget_div:hover {
+  text-decoration: underline;
+}
+.button_div {
+  text-align: center;
+  min-height: 50px;
+  margin-top: 30px;
+}
+.button {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px !important;
+  border-color: gray !important;
+  background-color: gray !important;
+}
+.button:hover {
+  background-color: lightgray !important;
+  color: black !important;
+  border-color: lightgray !important;
+}
+.footer {
+  text-align: center;
+  min-height: 30px;
+  margin-top: 20px;
+  font-weight: 500;
+  color: lightgray;
+}
+.footer_account {
+  padding-left: 5px;
+}
+.footer_account:hover {
+  color: rgb(8, 163, 214);
+  cursor: pointer;
+}
+.image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url("../../public/main4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  min-height: 580px;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(104, 103, 103);
+  border-color: black;
+}
+@media screen and (max-width: 1160px) {
+  .Sign_in {
+    min-height: 580px !important;
+  }
+  .forget_div {
+    padding-right: 0px !important;
+  }
+}
+@media screen and (min-width: 1160px) {
+  .Sign_in {
+    min-height: 580px !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .ant-drawer .ant-drawer-content {
+    width: 300px !important;
+    left: 21% !important;
+  }
+}
