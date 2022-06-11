@@ -34,10 +34,10 @@ function CreateProduct() {
         <div style={{ display: "flex", flexDirection: "row", marginTop: 20 }}>
           <div style={{ flex: "50%", backgroundColor: "whitesmoke" }}>
             <h3>
-              Name : {data.firstname} {data.lastname}
+              Name : {data?.firstname} {data?.lastname}
             </h3>
-            <h3>Email : {data.email}</h3>
-            <h3>Phone : {data.phone}</h3>
+            <h3>Email : {data?.email}</h3>
+            <h3>Phone : {data?.phone}</h3>
           </div>
           <div style={{ flex: "50%", backgroundColor: "whitesmoke" }}>
             <h3>Profession : Web Developer</h3>
