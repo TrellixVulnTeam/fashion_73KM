@@ -35,7 +35,7 @@ function Home() {
 
   return (
     <div>
-      <div className="image" />
+      <div className="pictures_div" />
       <div className="Sign_in">
         <div className="Signin_div">
           <div className="heading_div">ShoppingMart</div>

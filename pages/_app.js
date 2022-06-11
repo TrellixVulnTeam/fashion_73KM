@@ -5,7 +5,6 @@ import store from "../store";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://agile-earth-45664.herokuapp.com/";
-// axios.defaults.baseURL = "http://localhost:5000";
 
 function MyApp({ Component, pageProps }) {
   return (

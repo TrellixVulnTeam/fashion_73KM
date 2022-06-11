@@ -112,14 +112,14 @@
   color: rgb(8, 163, 214);
   cursor: pointer;
 }
-.image {
+.pictures_div {
   background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
     url("../../public/main4.jpg") !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-attachment: scroll !important;
   background-position: center !important;
-  min-height: 580px !important;
+  min-height: 580px;
 }
 ::-webkit-scrollbar {
   width: 5px;
