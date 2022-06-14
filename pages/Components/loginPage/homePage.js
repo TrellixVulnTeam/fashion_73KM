@@ -54,9 +54,7 @@ function LoginHome() {
   }, 5000);
 
   useEffect(() => {
-    const accessToken = localStorage.getItem("token");
-    const token = { accessToken };
-    dispatch({ type: "DATA_BY_ID", payload: token });
+    dispatch({ type: "DATA_BY_ID"});
   }, []);
 
   useEffect(() => {

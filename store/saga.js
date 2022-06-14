@@ -36,14 +36,16 @@ function* loginForm({ payload }) {
     const respo = yield call(axios.post, "/login", data);
     const token = respo.data.accessToken;
     localStorage.setItem("token", token);
-    yield put({ type: "DATA_BY_ID", payload: respo.data });
+    yield put({ type: "DATA_BY_ID" });
   } catch (error) {
     console.log(error, "Invalid Error");
   }
 }
 
-function* DataWhenLogin({ payload }) {
-  const token = payload.accessToken;
+function* DataWhenLogin() {
+  const accessToken = localStorage.getItem("token");
+  const tok = { accessToken };
+  const token = tok.accessToken;
   const head = {
     Authorization: token,
   };
