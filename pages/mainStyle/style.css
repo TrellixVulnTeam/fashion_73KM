@@ -495,12 +495,33 @@
   padding: 0;
 }
 
+.firstdiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.Pict {
+  height: 300px;
+  width: 100%;
+  -webkit-box-flex: 60%;
+      -ms-flex: 60%;
+          flex: 60%;
+}
+
 .Sign_in {
   min-width: 35%;
   position: absolute;
   right: 0;
   top: 0;
   background-color: white;
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
 }
 
 .Signin_div {
@@ -518,14 +539,14 @@
   color: black;
   text-align: center;
   font-weight: bolder;
-  padding-top: 60px;
+  padding-top: 4rem;
   font: 33px solid;
   font-style: italic;
 }
 
 .title_div {
-  min-height: 70px;
   font: 20px solid;
+  padding: 4rem;
   color: gray;
   text-align: center;
   font-weight: bolder;
@@ -652,10 +673,28 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 350px) {
   .ant-drawer .ant-drawer-content {
     width: 300px !important;
     left: 21% !important;
+  }
+  .firstdiv {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .heading_div {
+    padding: 1rem !important;
+  }
+  .title_div {
+    padding: 1rem !important;
+  }
+  .name_input_div {
+    width: 220px !important;
+  }
+  .password_input_div {
+    width: 220px !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
