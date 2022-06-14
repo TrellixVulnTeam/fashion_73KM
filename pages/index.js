@@ -35,101 +35,179 @@ function Home() {
 
   return (
     <div>
-      <div style={{ height: "300px", width: "100%" }}>
-        <Image
-          src="/mainpic.jpg"
-          height="139%"
-          width="100%"
-          alt="soory"
-          preview={false}
-        />
-      </div>
-      <div className="Sign_in">
-        <div className="Signin_div">
-          <div className="heading_div">ShoppingMart</div>
-          <div className="title_div">Welcome To ShoppingMart</div>
-          <Spin spinning={spinn}>
-            <Form
-              name="login"
-              initialValues={{
-                remember: true,
-              }}
-              onFinish={onFinish}
-            >
-              <Form.Item
-                className="name_div"
-                name="useremail"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your E-mail!",
-                  },
-                ]}
+      <div className="firstdiv">
+        <div className="Pict">
+          <Image
+            src="/mainpic.jpg"
+            height="139%"
+            width="100%"
+            alt="soory"
+            preview={false}
+          />
+        </div>
+        <div style={{ flex: "40%" }}>
+          <div className="heading_div">
+            ShoppingMart
+            <div className="title_div">Welcome To ShoppingMart</div>
+            <Spin spinning={spinn}>
+              <Form
+                name="login"
+                initialValues={{
+                  remember: true,
+                }}
+                onFinish={onFinish}
               >
-                <Input
-                  className="name_input_div"
-                  prefix={<UserOutlined />}
-                  placeholder="E-mail"
-                />
-              </Form.Item>
-              <Form.Item
-                className="password_div"
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Password!",
-                  },
-                ]}
-              >
-                <Input
-                  className="password_input_div"
-                  prefix={<LockOutlined />}
-                  type="password"
-                  placeholder="Password"
-                />
-              </Form.Item>
-              <Form.Item className="forget_div">
-                <a
-                  onClick={() => {
-                    dispatch({ type: "VISIBLE", payload: true });
-                  }}
+                <Form.Item
+                  className="name_div"
+                  name="useremail"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your E-mail!",
+                    },
+                  ]}
                 >
-                  Forgot password
-                </a>
-              </Form.Item>
+                  <Input
+                    className="name_input_div"
+                    prefix={<UserOutlined />}
+                    placeholder="E-mail"
+                  />
+                </Form.Item>
+                <Form.Item
+                  className="password_div"
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your Password!",
+                    },
+                  ]}
+                >
+                  <Input
+                    className="password_input_div"
+                    prefix={<LockOutlined />}
+                    type="password"
+                    placeholder="Password"
+                  />
+                </Form.Item>
+                <Form.Item className="forget_div">
+                  <a
+                    onClick={() => {
+                      dispatch({ type: "VISIBLE", payload: true });
+                    }}
+                  >
+                    Forgot password
+                  </a>
+                </Form.Item>
 
-              <Form.Item className="button_div">
-                <Button type="primary" htmlType="submit" className="button">
-                  Log in
-                </Button>
-              </Form.Item>
-              <Form.Item className="footer">
-                New ShoppingMart?
-                <u
-                  className="footer_account"
-                  onClick={() => {
-                    router.push("./Components/signup/sign");
-                  }}
-                >
-                  Create Account
-                </u>
-              </Form.Item>
-            </Form>
-          </Spin>
-          <Modal
-            visible={visible}
-            title="forget"
-            onCancel={() => {
-              dispatch({ type: "VISIBLE", payload: false });
-            }}
-            destroyOnClose
-          >
-            <p>sssssssssss</p>
-          </Modal>
+                <Form.Item className="button_div">
+                  <Button type="primary" htmlType="submit" className="button">
+                    Log in
+                  </Button>
+                </Form.Item>
+                <Form.Item className="footer">
+                  New ShoppingMart?
+                  <u
+                    className="footer_account"
+                    onClick={() => {
+                      router.push("./Components/signup/sign");
+                    }}
+                  >
+                    Create Account
+                  </u>
+                </Form.Item>
+              </Form>
+            </Spin>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 export default Home;
+
+// <div className="Sign_in">
+//           <div className="Signin_div">
+//             <div className="heading_div">ShoppingMart</div>
+//             <div className="title_div">Welcome To ShoppingMart</div>
+//             <Spin spinning={spinn}>
+//               <Form
+//                 name="login"
+//                 initialValues={{
+//                   remember: true,
+//                 }}
+//                 onFinish={onFinish}
+//               >
+//                 <Form.Item
+//                   className="name_div"
+//                   name="useremail"
+//                   rules={[
+//                     {
+//                       required: true,
+//                       message: "Please input your E-mail!",
+//                     },
+//                   ]}
+//                 >
+//                   <Input
+//                     className="name_input_div"
+//                     prefix={<UserOutlined />}
+//                     placeholder="E-mail"
+//                   />
+//                 </Form.Item>
+//                 <Form.Item
+//                   className="password_div"
+//                   name="password"
+//                   rules={[
+//                     {
+//                       required: true,
+//                       message: "Please input your Password!",
+//                     },
+//                   ]}
+//                 >
+//                   <Input
+//                     className="password_input_div"
+//                     prefix={<LockOutlined />}
+//                     type="password"
+//                     placeholder="Password"
+//                   />
+//                 </Form.Item>
+//                 <Form.Item className="forget_div">
+//                   <a
+//                     onClick={() => {
+//                       dispatch({ type: "VISIBLE", payload: true });
+//                     }}
+//                   >
+//                     Forgot password
+//                   </a>
+//                 </Form.Item>
+
+//                 <Form.Item className="button_div">
+//                   <Button type="primary" htmlType="submit" className="button">
+//                     Log in
+//                   </Button>
+//                 </Form.Item>
+//                 <Form.Item className="footer">
+//                   New ShoppingMart?
+//                   <u
+//                     className="footer_account"
+//                     onClick={() => {
+//                       router.push("./Components/signup/sign");
+//                     }}
+//                   >
+//                     Create Account
+//                   </u>
+//                 </Form.Item>
+//               </Form>
+//             </Spin>
+//             <Modal
+//               visible={visible}
+//               title="forget"
+//               onCancel={() => {
+//                 dispatch({ type: "VISIBLE", payload: false });
+//               }}
+//               destroyOnClose
+//             >
+//               <p>sssssssssss</p>
+//             </Modal>
+//           </div>
+//         </div>

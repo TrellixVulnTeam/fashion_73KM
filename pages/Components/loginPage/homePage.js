@@ -107,10 +107,6 @@ function LoginHome() {
     setDrawerVisible(true);
   }
 
-  // const data = [];
-  // for (let i = 0; i < 2; i++) {
-  //   data.push(Allproducts[i]);
-  // }
   return (
     <div>
       <Spin spinning={spin}>
@@ -314,7 +310,7 @@ function LoginHome() {
                     onClick={() => {
                       router.push({
                         pathname: "../CartPage/cartHome",
-                        query: { id: values.id, type: "casual" },
+                        query: { id: values.id, type: "Casual" },
                       });
                     }}
                   >
@@ -441,7 +437,7 @@ function LoginHome() {
                   onClick={() => {
                     router.push({
                       pathname: "../CartPage/cartHome",
-                      query: { id: values.id, type: "AllProduct" },
+                      query: { id: values.id, type: "Products" },
                     });
                   }}
                 >

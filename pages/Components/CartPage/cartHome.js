@@ -18,7 +18,6 @@ import {
   Collapse,
   Image,
   Drawer,
-  Input,
   Spin,
 } from "antd";
 import homeSaga from "../../../store/saga";
@@ -36,8 +35,8 @@ function Cart() {
   const [visible, setVisible] = useState(false);
   const [profile, setProfileUrl] = useState();
   const [spin, setspin] = useState(true);
-
   const [Drawervisible, setDrawerVisible] = useState(false);
+
   const size = [];
   const params = useRouter();
   const value = params.query;
@@ -48,8 +47,6 @@ function Cart() {
   const login = useSelector((state) => state.global.loginUser);
   const productId = useSelector((state) => state.global.productId);
   const carts = useSelector((state) => state.global.carts);
-
-  console.log(productId);
 
   setTimeout(() => {
     setspin(false);
@@ -284,7 +281,7 @@ function Cart() {
           </div>
           <div className="flextwo">
             <Image
-              src={`https://agile-earth-45664.herokuapp.com/images/${productId.picture}`}
+              src={`https://agile-earth-45664.herokuapp.com/images/${productId?.picture}`}
               width="100%"
               height="100%"
             />

@@ -51,6 +51,7 @@ function* DataWhenLogin({ payload }) {
     const res = yield call(axios.get, "/getuserdata", { headers: head });
     yield put(actions.loginAccount(res.data));
     const response = res.data;
+
     if (response.length != 0) {
       const res = yield call(axios.get, "/getProducts");
       const response = yield call(axios.get, "/getCasual");
@@ -69,13 +70,8 @@ function* DataWhenLogin({ payload }) {
 function* fetchProductId({ payload }) {
   try {
     const { id, type } = payload;
-    const Producttype = { type };
-    const ProductId = yield call(
-      axios.post,
-      `/getProductId/${id}`,
-      Producttype
-    );
-    // console.log(ProductId, "iddddddddddd");
+    const Producttype = { id, type };
+    const ProductId = yield call(axios.post, "/getProductId", { Producttype });
     yield put(actions.ProductById(ProductId.data[0]));
   } catch (err) {
     console.log(err, "error Fetch product By Id");
