@@ -53,14 +53,17 @@ function* DataWhenLogin() {
     const res = yield call(axios.get, "/getuserdata", { headers: head });
     yield put(actions.loginAccount(res.data));
     const response = res.data;
-
     if (response.length != 0) {
-      const res = yield call(axios.get, "/getProducts");
-      const response = yield call(axios.get, "/getCasual");
-      const resSaree = yield call(axios.get, "/getSaree");
-      yield put(actions.Allproducts(res.data));
-      yield put(actions.Casualproducts(response.data));
-      yield put(actions.SareeProducts(resSaree.data));
+      yield put({ type: "GET_PRODUCT" });
+      yield put({ type: "GET_CASUAL" });
+      yield put({ type: "GET_SAREE" });
+      yield put({ type: "FETCH_CART" });
+      // const res = yield call(axios.get, "/getProducts");
+      // const response = yield call(axios.get, "/getCasual");
+      // const resSaree = yield call(axios.get, "/getSaree");
+      // yield put(actions.Allproducts(res.data));
+      // yield put(actions.Casualproducts(response.data));
+      // yield put(actions.SareeProducts(resSaree.data));
     } else {
       console.log("User Empty");
     }
@@ -69,12 +72,39 @@ function* DataWhenLogin() {
   }
 }
 
+function* GetProduct() {
+  try {
+    const res = yield call(axios.get, "/getProducts");
+    yield put(actions.Allproducts(res.data));
+  } catch (err) {
+    console.log(err, " error getProduct");
+  }
+}
+function* GetCasual() {
+  try {
+    const response = yield call(axios.get, "/getCasual");
+    yield put(actions.Casualproducts(response.data));
+  } catch (err) {
+    console.log(err, " error getProduct");
+  }
+}
+function* GetSaree() {
+  try {
+    const resSaree = yield call(axios.get, "/getSaree");
+    yield put(actions.SareeProducts(resSaree.data));
+  } catch (err) {
+    console.log(err, " error getProduct");
+  }
+}
+
 function* fetchProductId({ payload }) {
   try {
     const { id, type } = payload;
     const Producttype = { id, type };
     const ProductId = yield call(axios.post, "/getProductId", { Producttype });
-    yield put(actions.ProductById(ProductId.data[0]));
+    if (ProductId.data.length != 0) {
+      yield put(actions.ProductById(ProductId.data[0]));
+    }
   } catch (err) {
     console.log(err, "error Fetch product By Id");
   }
@@ -132,6 +162,9 @@ function* homeSaga() {
   yield takeLatest("DATA_BY_ID", DataWhenLogin);
   yield takeLatest("FETCH_PRODUCT_BY_ID", fetchProductId);
   yield takeLatest("LOG_OUT", logout);
+  yield takeLatest("GET_PRODUCT", GetProduct);
+  yield takeLatest("GET_CASUAL", GetCasual);
+  yield takeLatest("GET_SAREE", GetSaree);
   yield takeLatest("ADD_TO_CART", AddToCart);
   yield takeLatest("FETCH_CART", fetchCart);
   yield takeLatest("INCREMENT", increment);

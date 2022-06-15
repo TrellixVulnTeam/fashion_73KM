@@ -53,9 +53,15 @@ function LoginHome() {
     setspin(false);
   }, 5000);
 
-  useEffect(() => {
-    dispatch({ type: "DATA_BY_ID"});
-  }, []);
+  // useEffect(() => {
+  //   dispatch({ type: "FETCH_CART" });
+  // }, [dispatch]);
+
+  //  useEffect(() => {
+  //   // dispatch({ type: "GET_PRODUCT"});
+  //   // dispatch({ type: "GET_CASUAL"});
+  //   // dispatch({ type: "GET_SAREE"});
+  // });
 
   useEffect(() => {
     if (login[0]?.id) {
@@ -68,26 +74,22 @@ function LoginHome() {
     }
   });
 
-  useEffect(() => {
-    dispatch({ type: "FETCH_CART" });
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", (event) => {
-      let scroll = window.scrollY;
-      if (scroll > 80) {
-        const data = document.querySelector(".NavBar");
-        data?.style.position = "sticky";
-        data?.style.animation = "homebar 1s";
-        data?.style.zIndex = 2;
-      } else if (scroll < 80) {
-        const data = document.querySelector(".NavBar");
-        data?.style.position = '';
-        data?.style.animation = "";
-        data?.style.zIndex = "0";
-      }
-    });
-  });
+  // useEffect(() => {
+  //   window.addEventListener("scroll", (event) => {
+  //     let scroll = window.scrollY;
+  //     if (scroll > 80) {
+  //       const data = document.querySelector(".NavBar");
+  //       data?.style.position = "sticky";
+  //       data?.style.animation = "homebar 1s";
+  //       data?.style.zIndex = 2;
+  //     } else if (scroll < 80) {
+  //       const data = document.querySelector(".NavBar");
+  //       data?.style.position = '';
+  //       data?.style.animation = "";
+  //       data?.style.zIndex = "0";
+  //     }
+  //   });
+  // });
 
   const handleVisibleChange = (flag) => {
     setVisible(flag);

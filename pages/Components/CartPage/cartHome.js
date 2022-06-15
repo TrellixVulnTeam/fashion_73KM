@@ -47,14 +47,14 @@ function Cart() {
   const login = useSelector((state) => state.global.loginUser);
   const productId = useSelector((state) => state.global.productId);
   const carts = useSelector((state) => state.global.carts);
-
+  const pic = productId.picture;
   setTimeout(() => {
     setspin(false);
   }, 2000);
 
   useEffect(() => {
     dispatch({ type: "FETCH_PRODUCT_BY_ID", payload: value });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (login[0]?.id) {
@@ -281,7 +281,7 @@ function Cart() {
           </div>
           <div className="flextwo">
             <Image
-              src={`https://agile-earth-45664.herokuapp.com/images/${productId?.picture}`}
+              src={`https://agile-earth-45664.herokuapp.com/images/${pic}`}
               width="100%"
               height="100%"
             />
