@@ -281,7 +281,11 @@ function Cart() {
           </div>
           <div className="flextwo">
             <Image
-              src={`https://agile-earth-45664.herokuapp.com/images/${pic}`}
+              src={
+                pic
+                  ? `https://agile-earth-45664.herokuapp.com/images/${pic}`
+                  : "soory"
+              }
               width="100%"
               height="100%"
             />
